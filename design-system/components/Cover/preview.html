@@ -1,0 +1,64 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SpareCode cover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../tokens.css">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); width: 100%; height: 288px; overflow: hidden; position: relative; }
+  svg.cover { position: absolute; left: 0; top: 0; width: 100%; height: 288px; display: block; }
+  .f-nickel { fill: var(--nickel-blue); }
+  .f-dime { fill: var(--dime-green); }
+  .f-ink { fill: var(--ink); }
+  .f-copper { fill: var(--penny-copper); }
+  .f-quarter { fill: var(--quarter-orange); }
+  .name {
+    position: absolute; left: 48px; bottom: 72px; margin: 0;
+    font-family: var(--font-sans); font-weight: 800; font-size: clamp(28px, 7.5vw, 72px); line-height: 1;
+    color: var(--ink); white-space: nowrap;
+  }
+  .tag {
+    position: absolute; left: 48px; bottom: 28px; width: min(400px, calc(50% - 64px)); margin: 0;
+    font-family: var(--font-sans); font-weight: 400; font-size: 14px; line-height: 20px;
+    color: var(--muted);
+  }
+  @media (max-width: 600px) {
+    .name { bottom: auto; top: 24px; left: 16px; }
+    .tag { left: 16px; bottom: 20px; width: calc(50% - 32px); }
+  }
+</style>
+</head>
+<body>
+<svg class="cover" viewBox="0 0 960 288" preserveAspectRatio="none" aria-hidden="true">
+  <!-- Derivation: four blocks in nickel-blue, dime-green, ink and penny-copper cover 50 percent, right of x=480.
+       Arrangement: one full-height nickel block, a dime block and an ink block stacked above a copper block that runs from x=640 to the right edge.
+       Pattern: quarter-orange bands at a 24px pitch across the nickel block, the coin-roll wrapper bands the brief names.
+       Steps and radii: none used (square blocks; the bands are fixed at 8px and 24px). -->
+  <rect class="f-nickel" x="480" y="0" width="160" height="288"/>
+  <g class="f-quarter">
+    <rect x="480" y="0" width="160" height="8"/>
+    <rect x="480" y="24" width="160" height="8"/>
+    <rect x="480" y="48" width="160" height="8"/>
+    <rect x="480" y="72" width="160" height="8"/>
+    <rect x="480" y="96" width="160" height="8"/>
+    <rect x="480" y="120" width="160" height="8"/>
+    <rect x="480" y="144" width="160" height="8"/>
+    <rect x="480" y="168" width="160" height="8"/>
+    <rect x="480" y="192" width="160" height="8"/>
+    <rect x="480" y="216" width="160" height="8"/>
+    <rect x="480" y="240" width="160" height="8"/>
+    <rect x="480" y="264" width="160" height="8"/>
+  </g>
+  <rect class="f-dime" x="640" y="0" width="120" height="144"/>
+  <rect class="f-ink" x="760" y="0" width="200" height="144"/>
+  <rect class="f-copper" x="640" y="144" width="320" height="144"/>
+</svg>
+<p class="name">SpareCode</p>
+<p class="tag">Keep working without using more Codex or Claude subscription quota.</p>
+</body>
+</html>

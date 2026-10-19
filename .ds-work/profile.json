@@ -1,0 +1,32 @@
+{
+  "project": "sparecode",
+  "what": "SpareCode is a small MIT-licensed command-line coding harness. It sends one bounded coding task to a low-cost hosted or local model and produces a reviewable diff.",
+  "audience": "Developers who want a low-cost coding fallback that needs no Codex or Claude subscription.",
+  "landing_job": "No landing page exists. The README opens the project and gives install and run commands.",
+  "surfaces": [
+    {"kind": "cli", "where": "bin/sparecode, sparecode/cli.py"},
+    {"kind": "cli", "where": "bin/yycc, bin/unburden, bin/userhappy (project-kit launchers)"}
+  ],
+  "public_url": "",
+  "brand_family": "",
+  "logo_files": [],
+  "existing_ds": {
+    "paths": [],
+    "has_readme_brandbook": false,
+    "has_tokens": false,
+    "has_cover_or_specimen": false,
+    "has_hero_pattern": false,
+    "has_logo_rules": false,
+    "published_artifact": ""
+  },
+  "identity": {
+    "coherent": false,
+    "palette": [],
+    "type": [],
+    "look": "No visual identity. The project is a terminal tool with no web pages, stylesheets, fonts, colour tokens or logo files."
+  },
+  "design_system_dir_conflict": "",
+  "classification": "new_needed",
+  "v2_case": "",
+  "notes": "Scan found 0 text files (evidence JSON). I checked by hand: git ls-files shows only Python, shell, YAML and Markdown. No html, css, svg or image files. Grep for colour, font, logo and hex values found nothing. No design-system URL in the repo."
+}

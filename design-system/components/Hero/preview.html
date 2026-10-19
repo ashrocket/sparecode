@@ -1,0 +1,103 @@
+<!-- @dsCard group="Landing" height=520 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpareCode hero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;800&family=Chivo+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../tokens.css">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 26px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: var(--space-4) var(--space-2);
+    display: flex;
+    align-items: center;
+  }
+  .wrap { max-width: 680px; width: 100%; min-width: 0; }
+  .name {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 72px;
+    letter-spacing: 0;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+  }
+  .lead {
+    margin: var(--space-3) 0 0;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--ink);
+  }
+  .cmd {
+    margin: var(--space-4) 0 0;
+    padding: var(--space-2);
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--penny-copper);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 15px;
+    line-height: 24px;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .cmd .prompt { color: var(--ink); opacity: 1; }
+  .actions { margin-top: var(--space-2); display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 12px 22px;
+    background: var(--ink);
+    color: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: var(--radius-md);
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .note {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--muted);
+  }
+  @media (max-width: 480px) {
+    .name { font-size: 56px; line-height: 56px; }
+  }
+</style>
+</head>
+<body>
+  <main class="hero">
+    <div class="wrap">
+      <h1 class="name">SpareCode</h1>
+      <p class="lead">A small, MIT-licensed coding harness for when you want to keep working without using more Codex or Claude subscription quota.</p>
+      <pre class="cmd"><span class="prompt">$</span> python3 -m venv .venv
+<span class="prompt">$</span> .venv/bin/python -m pip install .</pre>
+      <div class="actions">
+        <a class="btn" href="../../../README.md#start-in-two-minutes">Install</a>
+        <p class="note">Hosted models first. Zero Python runtime dependencies.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

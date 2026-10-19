@@ -1,0 +1,14 @@
+{
+ "n": "sparecode",
+ "target": "design-system",
+ "mode": "new",
+ "brief": "Concept: spare change in coin-roll wrappers (SpareCode keeps you coding on low-cost models when subscription quota runs out). Colours: paper #fbf9f4 (ground), ink #1e1e1c, penny-copper #9a4e28 (text-safe accent), nickel-blue #2f5d8a, dime-green #2e6b3f, quarter-orange #d9822b (non-text), muted #5e5b55. Type: \"Chivo\" 800 display, \"Chivo\" 400 body, \"Chivo Mono\" commands. Wordmark: \"SpareCode\" in Chivo 800. Cover pattern: coin-roll wrapper stripes - bands at a spacing pitch across one block. Hero: name, one sentence from README, action with the real install command from README.",
+ "ruling": "Cover: fixed 960px, px units only, no media queries, name 64-120px, tagline one line (shorten it to fit 440px, still true to README). Hero at 375px: no clipping or horizontal scroll (wordmark wraps or scales with a px step down, command block scrolls inside its own overflow-x:auto box).",
+ "defects": [
+  "components/Cover/preview.html line 22: `.name` uses font-size: clamp(28px, 7.5vw, 72px). SPEC forbids vw units on the Cover, and the minimum of 28px is below the 64-120px name range the SPEC requires.",
+  "components/Cover/preview.html lines 30-33: `@media (max-width: 600px)` block repositions the name and tagline. SPEC says the Cover is a fixed 960px layout with no media queries.",
+  "components/Cover/preview.html `.tag` (line 27 area, width min(400px, calc(50% - 64px))): at 960px the tagline \"Keep working without using more Codex or Claude subscription quota.\" wraps to two lines (verified in shot cover.png). SPEC requires one tagline line.",
+  "components/Hero/preview.html (rendered at 375px width, scratch shot hero-phone.png): the wordmark, lead sentence, command block and note run past the right edge and are clipped (\"SpareCod\", \"usin\"), so the page scrolls horizontally. SPEC requires width-fluid with no horizontal scroll. The cause was not isolated; it reproduces in headless Chrome only and should be confirmed in a real browser.",
+  "Not a defect, for the record: assets/Logos contains only README.md and no logo files. The cmp rule is vacuously satisfied, and the README correctly states that no logo exists and that the wordmark is plain type."
+ ]
+}
