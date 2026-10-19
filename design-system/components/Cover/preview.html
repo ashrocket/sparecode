@@ -10,8 +10,8 @@
 <link rel="stylesheet" href="../../tokens.css">
 <style>
   html, body { margin: 0; padding: 0; }
-  body { background: var(--paper); width: 100%; height: 288px; overflow: hidden; position: relative; }
-  svg.cover { position: absolute; left: 0; top: 0; width: 100%; height: 288px; display: block; }
+  body { background: var(--paper); width: 960px; height: 288px; overflow: hidden; position: relative; }
+  svg.cover { position: absolute; left: 0; top: 0; width: 960px; height: 288px; display: block; }
   .f-nickel { fill: var(--nickel-blue); }
   .f-dime { fill: var(--dime-green); }
   .f-ink { fill: var(--ink); }
@@ -19,22 +19,18 @@
   .f-quarter { fill: var(--quarter-orange); }
   .name {
     position: absolute; left: 48px; bottom: 72px; margin: 0;
-    font-family: var(--font-sans); font-weight: 800; font-size: clamp(28px, 7.5vw, 72px); line-height: 1;
+    font-family: var(--font-sans); font-weight: 800; font-size: 72px; line-height: 1;
     color: var(--ink); white-space: nowrap;
   }
   .tag {
-    position: absolute; left: 48px; bottom: 28px; width: min(400px, calc(50% - 64px)); margin: 0;
+    position: absolute; left: 48px; bottom: 28px; width: 432px; margin: 0; white-space: nowrap;
     font-family: var(--font-sans); font-weight: 400; font-size: 14px; line-height: 20px;
     color: var(--muted);
-  }
-  @media (max-width: 600px) {
-    .name { bottom: auto; top: 24px; left: 16px; }
-    .tag { left: 16px; bottom: 20px; width: calc(50% - 32px); }
   }
 </style>
 </head>
 <body>
-<svg class="cover" viewBox="0 0 960 288" preserveAspectRatio="none" aria-hidden="true">
+<svg class="cover" viewBox="0 0 960 288" aria-hidden="true">
   <!-- Derivation: four blocks in nickel-blue, dime-green, ink and penny-copper cover 50 percent, right of x=480.
        Arrangement: one full-height nickel block, a dime block and an ink block stacked above a copper block that runs from x=640 to the right edge.
        Pattern: quarter-orange bands at a 24px pitch across the nickel block, the coin-roll wrapper bands the brief names.
@@ -59,6 +55,6 @@
   <rect class="f-copper" x="640" y="144" width="320" height="144"/>
 </svg>
 <p class="name">SpareCode</p>
-<p class="tag">Keep working without using more Codex or Claude subscription quota.</p>
+<p class="tag">Keep working without more Codex or Claude quota.</p>
 </body>
 </html>
