@@ -1,5 +1,9 @@
 name: Test
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  merge_group:
 permissions:
   contents: read
 jobs:
@@ -11,10 +15,22 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Test change scoping
+        run: python3 -m unittest discover -s .github/ci/tests -v
+      - name: Determine test scope
+        id: scope
+        run: python3 .github/ci/ci_scope.py
       - uses: actions/setup-python@v5
+        if: steps.scope.outputs.full != 'false'
         with:
           python-version: ${{ matrix.python }}
       - run: python -m unittest discover -s tests -v
+        if: steps.scope.outputs.full != 'false'
       - run: python examples/offline_demo.py
+        if: steps.scope.outputs.full != 'false'
       - run: python -m pip install .
+        if: steps.scope.outputs.full != 'false'
       - run: sparecode --version
+        if: steps.scope.outputs.full != 'false'
