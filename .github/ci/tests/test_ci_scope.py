@@ -17,15 +17,15 @@ class ScopeTests(unittest.TestCase):
         for path in [
             "README.md",
             "pyproject.toml",
-            "src/agent_design_system/enforce.py",
+            "sparecode/cli.py",
             "examples/a.json",
-            "research/budget.json",
-            ".github/workflows/ci.yml",
+            "tests/test_cli.py",
+            ".github/workflows/test.yml",
             "unknown",
             "docs/tool.py",
             "AGENTS.md",
         ]:
-            self.assertTrue(ci.needs_checks(["docs/a.md.md", path]))
+            self.assertTrue(ci.needs_checks(["docs/a.md", path]))
         self.assertTrue(ci.needs_checks([]))
         for event in ["push", "workflow_dispatch", "merge_group", "unknown"]:
             self.assertTrue(ci.full_checks(event, {}))
