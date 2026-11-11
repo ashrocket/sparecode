@@ -205,8 +205,9 @@ scripted. It proves harness plumbing, not model intelligence. Tests cover cost g
 unknown usage, retry avoidance, context trimming, protected paths, conflicting edits,
 proposal persistence, and application/verification.
 
-GitHub Actions is configured for Python 3.11/3.13 on Linux/macOS. A checked-in workflow
-does not mean it has run. Real hosted-model generation requires a configured key.
+Run these offline checks before merging on Python 3.11 or 3.13. SpareCode is a
+local CLI package with no Cloudflare deployment; it has no hosted CI workflow.
+Real hosted-model generation requires a configured key.
 
 Sources: [OpenRouter API](https://openrouter.ai/docs/api/reference/overview),
 [provider price and privacy filters](https://openrouter.ai/docs/guides/routing/provider-selection),
